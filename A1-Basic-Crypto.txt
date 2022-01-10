@@ -1,0 +1,35 @@
+# Basic Crypto
+### Based on Chapter 2 of Information Security (2nd Edition) by Mark Stamp
+
+Decrypt the following message that was encrypted using a simple substitution cipher. The plaintext
+has no spaces or punctuation. (warning: there may be the odd transmission error) Submit the
+plaintext answer and key, along with an explanation on how you solved the problem and any code
+that you developed or software you used to help you arrive at your answer:
+
+```
+GBSXUCGSZQGKGSQPKQKGLSKASPCGBGBKGUKGCEUKUZKGGBSQEICA
+CGKGCEUERWKLKUPKQQGCIICUAEUVSHQKGCEUPCBGCGQOEVSHUNSU
+GKUZCGQSNLSHEHIEEDCUOGEPKHZGBSNKCUGSUKUASERLSKASCUGB
+SLKACRCACUZSSZEUSBEXHKRGSHWKLKUSQSKCHQTXKZHEUQBKZAEN
+NSUASZFENFCUOCUEKBXGBSWKLKUSQSKNFKQQKZEHGEGBSXUCGSZQ
+GKGSQKUZBCQAEIISKOXSZSICVSHSZGEGBSQSAHSGKHMERQGKGSKR
+EHNKIHSLIMGEKHSASUGKNSHCAKUNSQQKOSPBCISGBCQHSLIMQGKG
+SZGBKGCGQSSNSZXQSISQQGEAEUGCUXSGBSSJCQGCUOZCLIENKGCA
+USOEGCKGCEUQCGAEUGKCUSZUEBGHSKGEHBCUGERPKHEHKHNSZKGGKAD
+```
+
+## Submission requirements:
+
+Make sure to follow the above-mentioned specifications for all assignments.
+
+1. There should be one file named README.txt explaining which file contains what part of the
+assignment and explaining the procedure to build your code. It should only be a .txt format. No
+other format is acceptable.
+
+2. Every subsequent file should contain the name of part of assignment it covers, so for example,
+if the file contains the code for question 1, name the file Q1.c and so on.
+
+3. Create a .zip or a .tar.gz of all the files that you submit and upload a single .zip or .tar.gz on
+bblearn. The .zip or .tar.gz should be named as first letter of your first name and last name
+followed by the assignment number. So, for example, for assignment 1, if your name is Jane
+Doe, submit JDoe_hw1.zip or JDoe_hw1.tar.gz
