@@ -33,19 +33,14 @@ def up_shift(s, n):
 def decrypt_cypher(cypher_string):
     # 1. convert cypher to a character array (and setup a bunch of other variables)
     cypher_array = split(cypher_string)
-    up_shifted_array = []
-    down_shifted_array = []
     up_shifted_string = ""
     down_shifted_string = ""
     # 2. for each character in the array:
-    for number in range(26):
-        for character in cypher_array:
-            # a. shift the character between 1 and 26 characters up & print
-            up_shifted_char = up_shift()
-            up_shifted_array.append(up_shifted_char)
-            # b. shift the character between 1 and 26 characters down & print
-            down_shifted_char = chr(ord(character) + number)
-            down_shifted_array.append(down_shifted_char)
+    for number in range(27):
+        # a. shift the character between 1 and 26 characters up & print
+        up_shifted_array = up_shift(cypher_array, number)
+        # b. shift the character between 1 and 26 characters down & print
+        down_shifted_array = down_shift(cypher_array, number)
         # 3. put everything back together to form more easily readable strings
         for char in up_shifted_array:
             up_shifted_string += char
@@ -59,8 +54,6 @@ def decrypt_cypher(cypher_string):
         print(down_shifted_string + "\n")
         print("\n")
         # 5. Reset variables for next loop
-        up_shifted_array = []
-        down_shifted_array = []
         up_shifted_string = ""
         down_shifted_string = ""
 
