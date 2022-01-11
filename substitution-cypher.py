@@ -1,10 +1,9 @@
 #!/usr/bin/python
-
-import sys
+import string
 
 # A1 Basic Crypto
 
-cypher = """GBSXUCGSZQGKGSQPKQKGLSKASPCGBGBKGUKGCEUKUZKGGBSQEICA 
+cipher = """GBSXUCGSZQGKGSQPKQKGLSKASPCGBGBKGUKGCEUKUZKGGBSQEICA 
             CGKGCEUERWKLKUPKQQGCIICUAEUVSHQKGCEUPCBGCGQOEVSHUNSU
             GKUZCGQSNLSHEHIEEDCUOGEPKHZGBSNKCUGSUKUASERLSKASCUGB
             SLKACRCACUZSSZEUSBEXHKRGSHWKLKUSQSKCHQTXKZHEUQBKZAEN
@@ -14,54 +13,20 @@ cypher = """GBSXUCGSZQGKGSQPKQKGLSKASPCGBGBKGUKGCEUKUZKGGBSQEICA
             SZGBKGCGQSSNSZXQSISQQGEAEUGCUXSGBSSJCQGCUOZCLIENKGCA
             USOEGCKGCEUQCGAEUGKCUSZUEBGHSKGEHBCUGERPKHEHKHNSZKGGKAD"""
 
-
-# Helper methods
-def split(word):
-    return list(word)
+alphabet = string.ascii_uppercase
 
 
-# Shifting letters in python w/ only english letters
-# Reference: https://stackoverflow.com/questions/48514673/shift-letters-by-a-certain-value-in-python
-def down_shift(s, n):
-    return ''.join(chr((ord(char) - 97 - n) % 26 + 97) for char in s)
-
-
-def up_shift(s, n):
-    return ''.join(chr((ord(char) - 97 + n) % 26 + 97) for char in s)
-
-
-def decrypt_cypher(cypher_string):
-    # 1. convert cypher to a character array (and setup a bunch of other variables)
-    cypher_array = split(cypher_string)
-    up_shifted_string = ""
-    down_shifted_string = ""
-    # 2. for each character in the array:
-    for number in range(27):
-        # a. shift the character between 1 and 26 characters up & print
-        up_shifted_array = up_shift(cypher_array, number)
-        # b. shift the character between 1 and 26 characters down & print
-        down_shifted_array = down_shift(cypher_array, number)
-        # 3. put everything back together to form more easily readable strings
-        for char in up_shifted_array:
-            up_shifted_string += char
-        for char in down_shifted_array:
-            down_shifted_string += char
-        # 4. visually compare each output and see which one forms a sentence!
-        print("Cypher with UP key shift of: " + str(number) + "\n")
-        print(up_shifted_string + "\n")
-        print("\n")
-        print("Cypher with DOWN key shift of: " + str(number) + "\n")
-        print(down_shifted_string + "\n")
-        print("\n")
-        # 5. Reset variables for next loop
-        up_shifted_string = ""
-        down_shifted_string = ""
-
-
-# Main method
-def main():
-    decrypt_cypher(cypher)
-
-
-if __name__ == "__main__":
-    main()
+# 1. for each character in the array:
+for number in range(27):
+    shift = 26-number
+    shift %= 26
+    # 2. shift the character over
+    shifted_array = alphabet[shift:] + alphabet[:shift]
+    # 3. map alphabet to shifted array
+    table = str.maketrans(alphabet, shifted_array)
+    # 4. Decrypt the message!
+    decrypted = cipher.translate(table)
+    # 5. visually examine each output and see which one makes sense
+    print("Cypher with key shift of: " + str(number) + "\n")
+    print(decrypted + "\n")
+    print("\n")
