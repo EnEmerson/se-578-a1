@@ -54,7 +54,7 @@ for x in range(0, len(encoded)):
     else:
         decoded = decoded + " "
 print()
-print("Decoded message: " + decoded)
+print("Partially decoded message: " + decoded)
 
 
 # Method to take user input for characters to be swapped out manually
