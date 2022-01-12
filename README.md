@@ -28,6 +28,8 @@ This is what I think the key is after much trial and error:
 
 #### J and Y were not used in the encoded message, so it's a 50/50 whether they're assigned to X or Z.
 
+---
+
 ### Solution:
 Therefore, this is what the plaintext of the cipher would look like after decoding (with some adjustments):
 
